@@ -1,11 +1,11 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { Todo } from './todo';
 import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
@@ -29,13 +29,13 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('crud-app');
   });
   
-  it(`should have a newTodo todo`, async(() => {
+  it(`should have a newTodo todo`, waitForAsync(() => {
     let fixture = TestBed.createComponent(AppComponent);
     let app = fixture.debugElement.componentInstance;
     expect(app.newTodo instanceof Todo).toBeTruthy()
   }));
 
-  it('should display "Todos" in h1 tag', async(() => {
+  it('should display "Todos" in h1 tag', waitForAsync(() => {
     let fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     let compiled = fixture.debugElement.nativeElement;
