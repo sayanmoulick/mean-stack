@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
 import {Todo} from './todo';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+export interface Book {
+  books: string
+}
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +18,14 @@ export class TodoDataService {
   // Placeholder for todos
   todos: Todo[] = [];
   
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   // Simulate POST /todos
   addTodo(todo: Todo): TodoDataService {
     if (!todo.id) {
       todo.id = ++this.lastId;
     }
+    console.log(todo)
     this.todos.push(todo);
     return this;
   }
@@ -58,6 +65,10 @@ export class TodoDataService {
       complete: !todo.complete
     });
     return updatedTodo;
+  }
+
+  getAllBooks(): Observable<Book[]> {
+    return this.http.get<Book[]>('http://localhost:8080/api/books/')
   }
 
 }

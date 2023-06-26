@@ -16,6 +16,8 @@ export class AppComponent {
   // associated with the dependency injection token `TodoDataService`
   // and assign it to a property called `todoDataService`
   constructor(private todoDataService: TodoDataService) {
+    /*todoDataService.getAllBooks().subscribe(response => 
+      {console.log(response)});*/
   }
 
   addTodo() {
@@ -32,6 +34,11 @@ export class AppComponent {
   }
 
   get todos() {
+    // console.log(this.books());
     return this.todoDataService.getAllTodos();
+  }
+
+  books() {
+    return this.todoDataService.getAllBooks();
   }
 }

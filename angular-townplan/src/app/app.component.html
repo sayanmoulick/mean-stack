@@ -1,0 +1,50 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>Budget App</h1>
+    <div class="new-todo row">
+      <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label> -->     
+      <label class="radio-inline col-2"><input type="radio" name="optradio" value="income" [(ngModel)]="newTodo.inc_exp_type" checked>Income</label>
+      <label class="radio-inline col-2"><input type="radio" name="optradio" value="expense" [(ngModel)]="newTodo.inc_exp_type">Expense</label>
+      <input class="form-control col-3" placeholder="Amount" autofocus="" [(ngModel)]="newTodo.amount" (keyup.enter)="addTodo()">
+      <input class="form-control offset-1 col-3" placeholder="What's for?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
+    </div>
+    
+  </header>
+  <section class="main" *ngIf="todos.length > 0">
+    <ul class="todo-list">
+      <li *ngFor="let todo of todos" [class.completed]="todo.complete">
+        <div class="view">
+          <div class="form-inline">
+            <label *ngIf="todo.inc_exp_type === 'income'">
+              I
+            </label>
+            <label *ngIf="todo.inc_exp_type === 'expense'">
+              E
+            </label>
+            <label>{{todo.amount}} for " {{todo.title}} "</label>
+          </div>
+          
+          <!-- <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete"> -->
+          
+          <button class="btn destroy" (click)="removeTodo(todo)"></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <footer class="footer" *ngIf="todos.length > 0">
+    <span class="todo-count"><strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} added</span>
+  </footer>
+</section>
+<section>
+  <button class="btn btn-info">Create Chart</button>
+</section>
+  
+
+<!-- <p>Here’s a super-short primer on Angular’s template syntax in case you haven’t seen it yet:
+
+    [property]="expression": set property of an element to the value of expression
+    (event)="statement": execute statement when event occurred
+    [(property)]="expression": create two-way binding with expression
+    [class.special]="expression": add special CSS class to element when the value of expression is truthy
+    [style.color]="expression": set color CSS property to the value of expression </p> --> 

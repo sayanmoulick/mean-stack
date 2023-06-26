@@ -4,7 +4,7 @@ body {
 	padding: 0;
 }
 
-button {
+button .destroy{
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -69,7 +69,7 @@ body {
 
 .todoapp h1 {
 	position: absolute;
-	top: -200px;
+	top: -145px;
 	width: 100%;
 	font-size: 100px;
 	font-weight: 100;
@@ -194,7 +194,7 @@ label[for='toggle-all'] {
 .todo-list li label {
 	word-break: break-all;
 	padding: 15px 60px 15px 15px;
-	margin-left: 45px;
+	margin-left: 10%;
 	display: block;
 	line-height: 1.2;
 	transition: color 0.4s;
@@ -243,7 +243,7 @@ label[for='toggle-all'] {
 .footer {
 	color: #777;
 	padding: 10px 15px;
-	height: 20px;
+	height: 40px;
 	text-align: center;
 	border-top: 1px solid #e6e6e6;
 }

@@ -17,7 +17,9 @@ v10.22.0
 6.14.6
 
 ### Install angular
-> npm install -g @angular/cli
+> sudo npm install -g @angular/cli
+
+    * Using sudo as installed globally
 
 > ng --version
 
@@ -37,5 +39,19 @@ v10.22.0
 
 > ng generate service TodoData
 
+> npm install --save bootstrap
+
+> npm install --save jquery
+
 #### Run application in dev mode
 > ng serve
+
+### REST API in Node
+
+> npm init
+
+> npm i express
+
+> npm i joi
+
+> npm install cors --save
